@@ -6,7 +6,7 @@
   <title>WatchBird | 와치버드</title>
 
   <!--meta-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="le=edge">
 
   <!--bootstrap-->
@@ -30,7 +30,12 @@
   <script src="js/jquery-3.6.3.min.js"></script>
   <script src="js/menu_scroll.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 
@@ -40,46 +45,120 @@
 
   <header>
 
-    <div class="">
+    <div class="nav_wrap container">
 
       <hgroup>
 
-        <h1><img src="img/" alt="logo"></h1>
+        <h1><a href="#"><img src="img/watchbee_logoB.png" alt="logo"></a></h1>
 
       </hgroup>
 
 
-      <nav class="">
-        <ul>
+      <nav class="pc_menu">
+        <ul class="main_menu">
 
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-
+          <li><a href="#intro" class="scroll">Introduction</a></li>
+          <li><a href="#world" class="scroll">WB in the world</a>
+            <ul class="sub">
+              <li>
+                <a href="">minting</a>
+              </li>
+              <li>
+                <a href="">Marketplace</a>
+              </li>
+              <li>
+                <a href="">Lucky Box </a>
+              </li>
+              <li>
+                <a href="">Rare Nest</a>
+              </li>
+              <li>
+                <a href="">Staking</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nft" class="scroll">NFT Character</a></li>
+          <li><a href="#roadmap" class="scroll">Roadmap</a></li>
+          <li><a href="#contact" class="scroll">Contact</a></li>
+          <li class="lan_site"><i class="xi-globus"></i><i class="xi-caret-down-min"></i>
+            <ul class="sub">
+              <li><a href="index.html">Ko</a></li>
+              <li><a href="index_eng.html">Eng</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
 
       <!--반응형-->
 
-      <div class="">
+      <div class="menu cross menu--1">
+        <label>
+          <input type="checkbox">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="30" />
+            <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+            <path class="line--2" d="M0 50h70" />
+            <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+          </svg>
+        </label>
+        <script>
+          Array.from(document.getElementsByTagName('path')).map(path => {
+            console.log(path.getTotalLength());
+            const debugPath = path.cloneNode();
+            debugPath.classList.add('line--debug');
+            if (path.parentNode) path.parentNode.insertBefore(debugPath.cloneNode(), path);
+          });
+          const debugCheckbox = document.getElementById('debug');
+          debugCheckbox.addEventListener('change', () => {
+            if (debugCheckbox.checked) {
+              debugCheckbox.parentElement.classList.add('active');
+            } else {
+              debugCheckbox.parentElement.classList.remove('active');
+            }
+          });
+          let currentActive = 0;
+          const checkboxes = document.querySelectorAll('.grid input');
+          const autoShow = setInterval(() => {
+            checkboxes[currentActive % 4].checked = !checkboxes[currentActive % 4].checked;
+            if (!checkboxes[currentActive % 4].checked) currentActive += 1;
+          }, 1000);
+          document.querySelector('.grid').addEventListener('click', () => {
+            clearInterval(autoShow);
+          })
 
-        <img src="img/" alt="menu_button">
 
+        </script>
       </div>
 
-      <nav class="">
+      <nav class="moblie">
 
         <ul>
 
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-
+          <li><a href="#intro" class="scroll">Introduction</a></li>
+          <li><a href="#world" class="scroll">WB in the world</a>
+            <ul>
+              <li>
+                <a href="">minting</a>
+              </li>
+              <li>
+                <a href="">Marketplace</a>
+              </li>
+              <li>
+                <a href="">Lucky Box </a>
+              </li>
+              <li>
+                <a href="">Rare Nest</a>
+              </li>
+              <li>
+                <a href="">Staking</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nft" class="scroll">NFT Character</a></li>
+          <li><a href="#roadmap" class="scroll">Roadmap</a></li>
+          <li><a href="#contact" class="scroll">Contact</a></li>
+          <li><a href="index.html"><i class="xi-globus"></i></a></li>
         </ul>
 
       </nav>
@@ -87,8 +166,8 @@
       <!--반응형 js-->
       <script type="text/javascript">
         $(function () {
-          $("").click(function () {
-            $("").animate({ width: "toggle" }, 250);
+          $(".tap").click(function () {
+            $(".moblie").animate({ width: "toggle" }, 250);
           });
         });
 
@@ -98,9 +177,192 @@
 
   </header>
 
-  <main>    
+  <main>
+    <section id="home">
+
+      <div class="home_wrap container">
+      
+       <div class="left">
+         <div class="home_txt">
+           <h2>실물 기반 <br>
+             <b>이커머스</b>의 시작
+             <span>WatchBird in the world</span>
+           </h2>
+        
+         </div>
+         <div class="button">
+           <button class="whitepaper">Whitepaper</button>
+           <button class="wallet">Wallet</button>
+         </div>
+       </div>
+       <div class="right">
+        <img src="img/brid.gif" alt="">
+      </div>
+      </div>
+    </section><!-- home 끝 -->
+
+    <section id="intro">
+      <div class="intro container">
+        <img src="img/b2.png" alt="">
+        <h3>Introduction</h3>
+
+        <div class="txt">
+          <p>WatchBird in the World는 이커머스 서비스 플랫폼으로서,
+            세계 최초 실물 기반의 다양한 계약 상품을 거래할 수 있는 NFT 마켓 플레이스입니다.
+          </p>
+          <p>문화, 예술, 게임 캐릭터, 패션, 스포츠에 이르기까지 현실에서 사용하던 익숙한 상품들을 NFT화하여
+            소유권을 구매하고 판매하거나 공동구매를 통해 수익을 창출하며,
+            모바일 티켓이나 인증서와 같은 신원증명을 제공받을 수 있게 할 예정입니다.</p>
+
+        </div>
+
+        <div class="icon">
+          <ul>
+            <li>
+              <img src="img/int_icon1.png" alt="">
+              <dl>
+                <dt>호 텔</dt>
+                <dd>숙박권, 외식상품권, 이벤트, 행사 초대권</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon2.png" alt="">
+              <dl>
+                <dt>럭키 박스</dt>
+                <dd>랜덤 박스, 한정 상품 드로우 응모</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon3.png" alt="">
+              <dl>
+                <dt>골 프</dt>
+                <dd>필드 이용권, 레슨 이용권</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon4.png" alt="">
+              <dl>
+                <dt>패 션</dt>
+                <dd>각종 브랜드 상품, 패션쇼 입장권</dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro2">
+      <div class="intro2_area container">
+        <h3>Introduction</h3>
+        <span>WatchBird in the World 특징</span>
+        <div class="intro2_icon">
+          <ul>
+            <li>
+              <img src="img/int2_icon1.png" alt="">
+              <dl>
+                <dt>쉬운 사용성 제공 </dt>
+                <dd>누구나 손쉽게 NFT를 제작하여 판매 가능합니다.</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon2.png" alt="">
+              <dl>
+                <dt>오프라인 연동 가능 </dt>
+                <dd>NFT 이미지에 QR코드 삽입으로
+                  온/오프라인과 빠르게 연동 가능합니다.</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon3.png" alt="">
+              <dl>
+                <dt>다양한 상품 구성 </dt>
+                <dd>호텔 숙박권, 골프 이용권, 패션 한정 상품 등 실물 기반의
+                  다양한 계약 상품이 구성될 예정입니다.</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon4.png" alt="">
+              <dl>
+                <dt>NFT 사용자 확보</dt>
+                <dd>국내 주요 NFT 프로젝트와 제휴하여
+                  기존 NFT 홀더의 유입을 유도할 것입니다.</dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon5.png" alt="">
+              <dl>
+                <dt>메타버스 연계 </dt>
+                <dd>2024년 1Q에 오픈할 메타버스 서비스와 상품
+                  연계가 가능합니다.</dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="nft">
+      <h3>NFT Character</h3>
+      <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" id="swiper-wrapper-3b62e2f5101a298a2" aria-live="polite">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/b1.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b2.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b3.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b4.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b5.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b6.png" alt=""></div>
+        </div>
+        <!-- If we need pagination 
+        <div class="swiper-pagination"></div>
+-->
+        <!-- If we need navigation buttons
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+ -->
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+        <script>
+
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+              delay: 2000,
+              disableOnInteraction: false,
+              
+            },
+            loop:true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
+
+            },
+            
+          });
+        </script>
+      </div>
+    </section>
+
   </main>
-  
+
   <footer>
 
   </footer>

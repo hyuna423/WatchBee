@@ -21,7 +21,7 @@ h3{
 main{
   width: 100%;
   height: auto;
-  background: url(../img/bg_main.png)no-repeat center;
+  background: url(../img/bg_main.png)no-repeat top center;
   background-size:cover;
 }
 
@@ -34,3 +34,358 @@ body{
 
 
 /*헤더*/
+header{
+  position: fixed;
+  width: 100%;
+  margin:0 auto;
+  background: rgba(59, 77, 58, 0.8);
+  height: 80px;
+}
+
+header hgroup{
+  line-height: 65px; 
+  position: relative;
+}
+
+header hgroup{
+  width: 132px;
+  text-align: center;
+}
+
+header hgroup::after{
+  content: "";
+  width: 132px;
+  height:108px;
+  background: url(../img/logo_bg.png)no-repeat center center;
+  background-size:cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+}
+
+
+.nav_wrap{
+  display:flex;
+  justify-content: space-between;
+}
+
+.nav_wrap .pc_menu{
+  width: 60%;
+  
+}
+
+.nav_wrap .pc_menu .main_menu{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  line-height: 80px;
+}
+
+.nav_wrap .pc_menu .main_menu li{
+  position: relative;
+  box-sizing: border-box;
+  width: 16%;
+  text-align: center;
+
+}
+
+
+.nav_wrap .pc_menu .main_menu li.lan_site{
+  cursor: pointer;
+}
+
+.nav_wrap .pc_menu .main_menu li a{
+  display: block;
+  clear:both;
+  color: #fff;
+
+}
+
+
+
+.nav_wrap .pc_menu .main_menu li ul.sub{
+  display: none;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px ;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.nav_wrap .pc_menu .main_menu li ul.sub::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  transform: translateX(-50%);
+}
+
+.nav_wrap .pc_menu .main_menu li ul.sub li{
+  width: 100%;
+  text-align: center;
+}
+.nav_wrap .pc_menu .main_menu li .sub li a{
+  color: #FFB000;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+}
+
+.nav_wrap .pc_menu .main_menu li .sub li a::after{
+  content: "Coming Soon.";
+  width: 70%;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: -80%;
+  background-color: #FFB000;
+  border-radius: 30px;
+  color: #7E2C00;
+  font-size: 10px;
+  line-height: 20px;
+  display: none;
+  transition: all .5s;
+}
+
+.nav_wrap .pc_menu .main_menu li:hover .sub,
+.nav_wrap .pc_menu .main_menu li:hover .sub2{
+  display: block;
+}
+
+.nav_wrap .pc_menu .main_menu li .sub li a:hover{
+  color: #7E2C00;
+}
+.nav_wrap .pc_menu .main_menu li .sub li a:hover::after{
+  display: block;
+}
+
+.moblie{
+  display:none;
+}
+/* menu_toggle */
+.menu{
+  display: none;
+}
+input {
+  display: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.grid>* {
+  position: relative;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  label {
+    width: 50vh;
+    height: 50vh;
+  }
+}
+
+.menu--1 label,
+.menu--2 label {
+  bottom: 0;
+}
+
+.menu--3 label,
+.menu--4 label {
+  top: 0;
+}
+
+.menu--1 label,
+.menu--3 label {
+  right: 0;
+}
+
+.menu--2 label,
+.menu--4 label {
+  left: 0;
+}
+
+path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  --length: 24;
+  --offset: -38;
+  stroke-dasharray: var(--length) var(--total-length);
+  stroke-dashoffset: var(--offset);
+  transition: all .8s cubic-bezier(.645, .045, .355, 1);
+}
+
+circle {
+  fill: #fff3;
+  opacity: 0;
+}
+
+label:hover circle {
+  opacity: 1;
+}
+
+.cross input:checked+svg .line--1,
+  .cross input:checked+svg .line--3 {
+    --length: 22.627416998;
+  }
+
+.cross input:checked+svg .line--2 {
+    --length: 0;
+  }
+
+.back input:checked+svg .line--1,
+  .back input:checked+svg .line--3 {
+    --length: 8.602325267;
+  }
+
+.menu--1 .line--1,
+  .menu--1 .line--3 {
+    --total-length: 126.64183044433594;
+  }
+
+.menu--1 .line--2 {
+    --total-length: 70;
+  }
+
+.menu--1 input:checked+svg .line--1,
+    .menu--1 input:checked+svg .line--3 {
+      --offset: -94.1149185097;
+    }
+
+.menu--1 input:checked+svg .line--2 {
+      --offset: -50;
+    }
+
+.debug {
+  display: none;
+}
+
+.line--debug {
+  opacity: 0;
+  stroke-dasharray: none;
+}
+
+
+
+/* 스와이퍼 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* home */
+
+#home .home_wrap{
+  padding-top: 130px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#home .home_wrap .right, #home .home_wrap .left{
+  width: 50%;
+}
+
+#home .home_wrap .left{
+  display: flex;
+  flex-direction: column;
+}
+
+#home .home_wrap .left .home_txt h2{
+  font-size: 5rem;
+  margin-bottom: 40px;
+}
+
+#home .home_wrap .left .home_txt h2 span{
+  display: block;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+
+#home .home_wrap .left .button button{
+  background:#FFB000;
+  width: 25%;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+#home .home_wrap .left .button button:hover{
+  background: #fff;
+  color: #FFB000;
+}
+
+#home .home_wrap .left .button button:first-child{
+  margin-right:30px;
+}
+
+#home .home_wrap .left .button button:nth-child(2){
+  position: relative;
+}
+
+#home .home_wrap .left .button button:nth-child(2):after{
+  content: "Coming Soon.";
+  width: 70%;
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  right: -60%;
+  background-color: #fff;
+  border-radius: 30px;
+  color: #7E2C00;
+  border: 1px solid #FFB000;
+  font-size: 10px;
+  line-height: 20px;
+  transition: all .5s;
+}
+
+#home .home_wrap .right img{
+  width: 90%;
+  float: right;
+}
+
