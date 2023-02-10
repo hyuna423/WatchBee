@@ -6,7 +6,7 @@
   <title>WatchBird | 와치버드</title>
 
   <!--meta-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="le=edge">
 
   <!--bootstrap-->
@@ -30,6 +30,11 @@
   <script src="js/jquery-3.6.3.min.js"></script>
   <script src="js/menu_scroll.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 
@@ -39,55 +44,120 @@
 
   <header>
 
-    <div class="">
+    <div class="nav_wrap container">
 
       <hgroup>
 
-        <h1><img src="img/" alt="logo"></h1>
+        <h1><a href="#"><img src="img/watchbee_logoB.png" alt="logo"></a></h1>
 
       </hgroup>
 
 
-      <nav class="">
-        <ul>
+      <nav class="pc_menu">
+        <ul class="main_menu">
 
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-
+          <li><a href="#intro" class="scroll">Introduction</a></li>
+          <li><a href="#world" class="scroll">WB in the world</a>
+            <ul class="sub">
+              <li>
+                <a href="" onclick="return false;">minting</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Marketplace</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Lucky Box </a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Rare Nest</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Staking</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nft" class="scroll">NFT Character</a></li>
+          <li><a href="#roadmap" class="scroll">Roadmap</a></li>
+          <li><a href="#contact" class="scroll">Contact</a></li>
+          <li class="lan_site"><i class="xi-globus"></i><i class="xi-caret-down-min"></i>
+            <ul class="sub lan">
+              <li><a href="index.html">Ko</a></li>
+              <li><a href="index_eng.html">Eng</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
 
       <!--반응형-->
 
-      <div class="">
+      <div class="ham">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
 
-        <img src="img/" alt="menu_button">
+        <script>
+          var burger = $('.menu-trigger');
+
+          burger.each(function (index) {
+            var $this = $(this);
+
+            $this.on('click', function (e) {
+              e.preventDefault();
+              $(this).toggleClass('active-' + (index + 1));
+            })
+          });
+        </script>
 
       </div>
-
-      <nav class="">
+      <nav class="moblie">
 
         <ul>
 
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-          <li><a href="" class="scroll"></a></li>
-
+          <li><a href="#intro" class="scroll">Introduction</a></li>
+          <li class="wb"><a href="#world" class="scroll">WB in the world<i class="xi-caret-down-min"></i></a>
+            <ul class="mob_sub">
+              <li>
+                <a href="" onclick="return false;">minting</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Marketplace</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Lucky Box </a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Rare Nest</a>
+              </li>
+              <li>
+                <a href="" onclick="return false;">Staking</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#nft" class="scroll">NFT Character</a></li>
+          <li><a href="#roadmap" class="scroll">Roadmap</a></li>
+          <li><a href="#contact" class="scroll">Contact</a></li>
+          <li><a href="index.html"><i class="xi-globus"></i></a></li>
         </ul>
+
+        <script>
+          $(document).ready(function () {
+            $(".moblie ul.mob_sub").hide();
+            $(".moblie li.wb").click(function () {
+              $("ul", this).slideToggle("fast");
+            });
+          });
+        </script>
 
       </nav>
 
       <!--반응형 js-->
       <script type="text/javascript">
         $(function () {
-          $("").click(function () {
-            $("").animate({ width: "toggle" }, 250);
+          $(".ham").click(function () {
+            $(".moblie").animate({ width: "toggle" }, 250);
           });
         });
 
@@ -98,9 +168,292 @@
   </header>
 
   <main>
+    <section id="home">
+
+      <div class="home_wrap container">
+
+        <div class="left">
+          <div class="home_txt">
+            <h2>The Beginning<br>
+              of Life-Based <br> <b>E-Commerce</b>
+              <span>WatchBird in the world</span>
+            </h2>
+
+          </div>
+          <div class="button">
+            <button class="whitepaper">Whitepaper</button>
+            <button class="wallet">Wallet</button>
+          </div>
+        </div>
+        <div class="right">
+          <img src="img/brid.gif" alt="">
+        </div>
+      </div>
+    </section><!-- home 끝 -->
+
+    <section id="intro">
+      <div class="intro container">
+        <img src="img/int-b.png" alt="">
+        <h3>Introduction</h3>
+
+        <div class="txt">
+          <p>WatchBird in the World is an e-commerce service platform that is the world's first NFT marketplace where
+            you can trade a variety of life-based contract products.
+
+          </p>
+          <p>From culture, art, game characters, fashion, and sports, we will NFT the familiar products we used in
+            reality, so that we can buy and sell ownership or generate profits through joint purchases, and receive
+            identification such as mobile tickets and certificates.
+          </p>
+
+        </div>
+
+        <div class="icon">
+          <ul>
+            <li>
+              <img src="img/int_icon1.png" alt="">
+              <dl>
+                <dt>Hotel</dt>
+                <dd>Accommodation vouchers, dining vouchers, event, event invitation vouchers
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon2.png" alt="">
+              <dl>
+                <dt>Lucky Box
+                </dt>
+                <dd>Random box, limited product draw application
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon3.png" alt="">
+              <dl>
+                <dt>Golf
+                </dt>
+                <dd>Field pass, lesson pass
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int_icon4.png" alt="">
+              <dl>
+                <dt>Fashion
+                </dt>
+                <dd>Various brand products, fashion show tickets
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro2">
+      <div class="intro2_area container">
+        <h3>Introduction</h3>
+        <span>Features of WatchBird in the World
+        </span>
+        <div class="intro2_icon">
+          <ul>
+            <li>
+              <img src="img/int2_icon1.png" alt="">
+              <dl>
+                <dt>Provides easy usability</dt>
+                <dd>Anyone can
+                  easily create and sell NFTs.
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon2.png" alt="">
+              <dl>
+                <dt>Offline linkage possible</dt>
+                <dd>By
+                  inserting a QR code into the NFT
+                  image, it can be linked
+                  online/offline quickly.
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon3.png" alt="">
+              <dl>
+                <dt>Composition of various products </dt>
+                <dd>A
+                  variety of actual contract products
+                  such as hotel accommodation
+                  vouchers, golf vouchers, and
+                  fashion-limited products will be
+                  composed.
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon4.png" alt="">
+              <dl>
+                <dt>Acquisition of NFT users</dt>
+                <dd>We
+                  will induce the inflow of
+                  existing NFT holders by
+                  partnering with major domestic
+                  NFT projects.
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <img src="img/int2_icon5.png" alt="">
+              <dl>
+                <dt>Metaverse connection</dt>
+                <dd>It is
+                  possible to link products with
+                  metaverse services to be opened
+                  in 2024 1Q
+                </dd>
+              </dl>44
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro3">
+      <div class="intro3_area container">
+        <h3>Introduction <br>
+          NFT Holder Benefits
+        </h3>
+        <div class="intro3_con">
+          <div class="intro3_txt">
+            <p>Marketplace WatchBird in the World Ratings Benefits
+
+              Using Rare Nest, a community dedicated to holders
+
+              Lucky Box NFT Airdrop
+
+              WB Coin Staking
+            </p>
+          </div>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Sortation</th>
+                  <th>NFT</th>
+                  <th>Hotel</th>
+                  <th>Golf</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="td_first">
+                  <td>The Number
+                  </td>
+                  <td>Grade
+                  </td>
+                  <td>Discount Rate
+                  </td>
+                  <td>Discount Rate
+                  </td>
+                  <td>Discount Rate
+                  </td>
+                </tr>
+                <tr>
+                  <td>1~4</td>
+                  <td>Bird</td>
+                  <td>5%</td>
+                  <td>5%</td>
+                  <td>3%</td>
+                </tr>
+                <tr>
+                  <td>5~8</td>
+                  <td>Hawk Brid</td>
+                  <td>10%</td>
+                  <td>10%</td>
+                  <td>7%</td>
+                </tr>
+                <tr>
+                  <td>9~22</td>
+                  <td>Owl Bird</td>
+                  <td>15%</td>
+                  <td>15%</td>
+                  <td>11%</td>
+                </tr>
+                <tr>
+                  <td>13~16</td>
+                  <td>Eagle Bird</td>
+                  <td>20%</td>
+                  <td>20%</td>
+                  <td>15%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="nft">
+      <h3>NFT Character</h3>
+      <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" id="swiper-wrapper-3b62e2f5101a298a2" aria-live="polite">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/b1.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b2.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b3.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b4.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b5.png" alt=""></div>
+          <div class="swiper-slide"><img src="img/b6.png" alt=""></div>
+        </div>
+        <!-- If we need pagination 
+        <div class="swiper-pagination"></div>
+-->
+        <!-- If we need navigation buttons
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+ -->
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+
+        <script>
+
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+              delay: 2000,
+              disableOnInteraction: false,
+
+            },
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
+
+            },
+
+          });
+        </script>
+      </div>
+    </section>
 
   </main>
-  
+
   <footer>
 
   </footer>
@@ -109,7 +462,7 @@
     AOS.init();
   </script>
 
-</body>
 
+</body>
 
 </html>

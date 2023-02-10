@@ -2,12 +2,20 @@
     a{text-decoration : none;}
     address{font-style:normal;}
 
+    #intro .intro .txt {
+      width: 50%;
+      margin: 0 auto;
+  }
 
 
 
     
 /*데탑*/
 @media screen and (max-width:1440px) {
+  #intro .intro .txt {
+    width: 60%;
+    margin: 0 auto;
+}
 }
 
 
@@ -20,6 +28,20 @@
 
   /*아이패드 (768px)*/
   @media screen and (max-width:991px) {
+
+    #intro3 .intro3_area .intro3_con {
+      flex-direction: column;
+  }
+
+  #intro3 .intro3_area .intro3_txt {
+    width: 90%;
+}
+
+#intro3 .intro3_area .table {
+  margin-top: 5%;
+  width: 100%;
+}
+
 }
 
 
@@ -28,6 +50,9 @@
 
 @media screen and (max-width:767px) {
 
+#intro .intro .txt {
+  width: 100%;
+}
 }
 
 
@@ -35,6 +60,23 @@
 
 
 @media screen and (max-width:576px) {
+  #intro .intro .txt {
+    width: 90%;
+}
+
+#intro .intro .icon {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#intro2 .intro2_icon{
+  width: 90%;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 10px;
+}
 
 }
 

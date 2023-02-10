@@ -1,5 +1,8 @@
 /*데탑*/
 @media screen and (max-width:1440px) {
+  .nav_wrap .pc_menu {
+    width: 75%;
+}
 
   /* intro2 */
   #intro2 .intro2_area .intro2_icon ul li dl dd br {
@@ -110,10 +113,6 @@
       margin-top: 5%;
     }
 
-    i #intro2 .intro2_area .intro2_icon ul li:nth-child(4),
-    #intro2 .intro2_area .intro2_icon ul li:nth-child(5) {
-      padding-top: 0;
-    }
 
     #intro3 .intro3_area .intro3_con {
       flex-direction: column;
@@ -199,7 +198,7 @@
 
   th,
   td {
-    padding: 16px !important;
+    padding: 16px;
   }
 
   #home .home_wrap .left .home_txt h2 {
