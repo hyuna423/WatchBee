@@ -34,3 +34,251 @@ body{
 
 
 /*헤더*/
+
+/* wallet */
+#wallet {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+.wallet_wrap {
+  width: 100%;
+}
+.wll_blck_box {
+  width: 100%;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #66746b;
+  backdrop-filter: blur(2.5px);
+  border-radius: 30px;
+}
+.wll_contents_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+}
+.wallet_phone {
+  width: 50%;
+}
+.wallet_phone img {
+  max-width: 100%;
+}
+.wallet_txt {
+  width: 50%;
+  padding: 3%;
+}
+.wallet_txt b {
+  font-weight: 800;
+  margin-right: 2%;
+}
+.wallet_txt h5 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 150%;
+  margin-bottom: 7%;
+}
+#wallet .wallet_link_btn {
+  display: inline-block;
+  background-color: #FEC726;
+  border-radius: 5px;
+  width: 45%;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  position: relative;
+  outline:none;
+  transition: all 0.3s ease-in-out;
+}
+#wallet .wallet_link_btn:hover {
+  background-color: #53a069;
+}
+
+/* roadmap */
+#roadmap {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+.roadmap_wrap {
+  width: 100%;
+}
+#roadmap h3 {
+  text-align: center;
+  color: #fff;
+}
+.rdm_contents_wrap {
+  width: 100%;
+  margin: 120px 0 250px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.rdm_cont_box {
+  position: relative;
+  padding: 2%;
+
+  width: 23%;
+  height: fit-content;
+  
+  background: rgba(49, 62, 49, 0.78);
+  border: 2px solid #5c6d62;
+  border-radius: 5px;
+}
+.rdm_img {
+  position: absolute;
+  top: -70px;
+}
+.rdm_img img {
+  max-width: 80%;
+}
+#roadmap .rdm_cont_box:nth-child(2), #roadmap .rdm_cont_box:nth-child(3){
+  bottom: -200px;
+  height: 350px;
+}
+.rdm_cont_box h5 {
+  color: #FEC726;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 6%;
+}
+.rdm_cont_box p {
+  line-height: 160%;
+  font-size: 0.95rem;
+  font-weight: lighter;
+}
+
+/* contact */
+#contact{
+  width: 100%;
+  height: auto;
+  background: #E2E2E2;
+  padding: 100px 0;
+  position: relative;
+  z-index: 0;
+  overflow:hidden;
+}
+#contact::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: url(../img/AdobeStock_563826099.png) no-repeat center;
+  filter: brightness(0.5);
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+#contact .ct_wrap{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+#contact .ct_wrap h3{
+  text-align: center;
+  padding-bottom: 3%;
+  color: #fff;
+  position: relative;
+}
+#contact .ct_wrap form{
+  width: 100%;
+  margin: 0 auto;
+}
+#contact input,
+#contact textarea{
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #717E60;
+  width: 80%;
+  margin: 0 auto 20px;
+  padding: 1%;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2.5px);
+  outline: none;
+  cursor: text;
+}
+#contact .ct_wrap form .half_input{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#contact .ct_wrap form .half_input .email,
+#contact .ct_wrap form .half_input .name{
+  width: 49%;
+  border-radius: 5px;
+}
+#contact .ct_wrap form .half_input .email{
+  margin-right: 2%;
+}
+#contact textarea{
+  border-radius: 5px;
+  height: 300px;
+}
+#contact .ct_wrap form input.send{
+  width: 25%;
+  background: #FFB000;
+  padding: 0 !important;
+  line-height: 4.5rem;
+  border-radius: 10px;
+  border: 0;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: none;
+  margin-top: 4%;
+  transition: all .5s;
+  cursor: pointer;
+}
+#contact .ct_wrap form input.send:hover{
+  background-color: #495a32;
+  color: #fff;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: auto;
+  padding: 2% 0;
+  background-color: #202020;
+}
+.f_ct {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 5%;
+  margin: 1% 0;
+}
+footer h5 {
+  margin-bottom: 10%;
+  font-size: 0.95rem;
+}
+.f_com {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.f_com a {
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.f_com a:hover {
+  color: #FEC726;
+}
+footer .f_wrap .warning {
+  margin-top: 4%;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(163, 163, 163);
+  line-height: 160%;
+}

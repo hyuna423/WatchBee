@@ -1,18 +1,53 @@
 
 /*데탑*/
 @media screen and (max-width:1440px) {
+  /* roadmap */
+  #roadmap .rdm_cont_box:nth-child(2), #roadmap .rdm_cont_box:nth-child(3){
+    height: 400px;
+  }
 }
 
 
 
 /*노트북*/
   @media screen and (max-width:1024px) {
+    /* contact */
+      #contact .ct_wrap form input.send {
+        line-height: 3.3rem;
+      }
+    /* footer */
+    footer {
+      padding: 6% 0;
+    }    
 }
 
 
 
   /*아이패드 (768px)*/
   @media screen and (max-width:991px) {
+    /* roadmap */
+    .rdm_contents_wrap {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .rdm_cont_box {
+      width: 80%;
+      padding: 2% 2% 7% 2%;
+      margin-bottom: 15%;
+    }
+    #roadmap .rdm_cont_box:nth-child(2), #roadmap .rdm_cont_box:nth-child(3){
+      bottom: 0;
+      height: fit-content;
+    }
+    .rdm_contents_wrap {
+          margin: 150px 0 0px 0;
+    }
+
+    /* contact */
+    #contact .ct_wrap form input.send {
+      width: 35%;
+    }
 }
 
 
@@ -21,6 +56,57 @@
 
 @media screen and (max-width:767px) {
 
+  /* wallet */
+  .wll_contents_wrap {
+    flex-direction: column;
+  }
+  .wallet_phone {
+    width: 90%;
+  }
+  .wallet_txt {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  /* contact */
+  #contact .ct_wrap form .half_input {
+    flex-direction: column;
+  }
+  #contact .ct_wrap form .half_input .email {
+    margin: 0 0 5% 0;
+  }
+  #contact .ct_wrap form .half_input .email, #contact .ct_wrap form .half_input .name {
+    width: 100%;
+  }
+  #contact .ct_wrap form input.send {
+    width: 45%;
+    line-height: 3rem;
+    border-radius: 5px;
+  }
+  #contact .ct_wrap form .half_input {
+    width: 90%;
+  }
+  #contact input, #contact textarea {
+    width: 90%;
+  }
+
+  /* footer */
+  .f_ct {
+    flex-direction: column;
+    padding: 5% 0;
+    text-align: center;
+  }
+  .f_info {
+    width: 100%;
+  }
+  footer h5 {
+    margin-bottom: 4%;
+  }
+  .f_com {
+    width: 100%;
+    padding: 0 30%;
+    margin-top: 5%;
+  }
 }
 
 
@@ -29,14 +115,27 @@
 
 @media screen and (max-width:576px) {
 
+  /* roadmap */
+  .rdm_cont_box {
+    margin-bottom: 23%;
+  }
 }
 
 
 
 /*모바일3 갤럭시*/
 
-  @media screen and (max-width:425px) {
-
+@media screen and (max-width:425px) {
+  /* roadmap */
+  .rdm_cont_box {
+    width: 95%;
+  }
+  .rdm_img {
+    top: -45px;
+  }
+  .rdm_img img {
+    max-width: 50%;
+  }
 }
 
 
