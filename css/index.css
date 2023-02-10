@@ -32,6 +32,7 @@ main {
   width: 100%;
   height: auto;
   background: url(../img/bg_main.png)no-repeat top center;
+  background-size: cover;
 }
 
 body {
@@ -665,6 +666,10 @@ tbody td {
   position: relative;
 }
 
+
+.table td:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 
 
