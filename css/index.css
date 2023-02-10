@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'locus_sangsang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +46,7 @@ body {
   color: #fff;
   background: #222222;
   overflow-x: hidden;
+  font-family: 'locus_sangsang';
 }
 
 p,
@@ -172,7 +180,7 @@ header hgroup::after {
   height: 20px;
   position: absolute;
   top: 0;
-  right: -50%;
+  right: -60%;
   background-color: #FFB000;
   border-radius: 30px;
   color: #7E2C00;
@@ -290,10 +298,12 @@ header hgroup::after {
   padding-left: 5%;
   font-size: 2rem;
   color: #222222;
+  font-weight: 400;
 }
 
 .moblie ul li a:hover {
   color: #7E2C00;
+  font-weight: 500;
 }
 
 .moblie ul li ul.mob_sub li {

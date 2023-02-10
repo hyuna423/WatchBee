@@ -31,10 +31,10 @@
   <script src="js/menu_scroll.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 
@@ -142,19 +142,17 @@
           <li><a href="index.html"><i class="xi-globus"></i></a></li>
         </ul>
 
-        <script>
-          $(document).ready(function () {
-            $(".moblie ul.mob_sub").hide();
-            $(".moblie li.wb").click(function () {
-              $("ul", this).slideToggle("fast");
-            });
-          });
-        </script>
 
       </nav>
 
       <!--반응형 js-->
       <script type="text/javascript">
+        $(document).ready(function () {
+          $(".moblie ul.mob_sub").hide();
+          $(".moblie li.wb").click(function () {
+            $("ul", this).slideToggle("fast");
+          });
+        });
         $(function () {
           $(".ham").click(function () {
             $(".moblie").animate({ width: "toggle" }, 250);
@@ -181,7 +179,8 @@
 
           </div>
           <div class="button">
-            <button type="button" onclick="location.href='WatchBird_whitepaper_EN.pdf' " class="whitepaper">Whitepaper</button>
+            <button type="button" onclick="location.href='WatchBird_whitepaper_EN.pdf' "
+              class="whitepaper">Whitepaper</button>
             <button class="wallet">Wallet</button>
           </div>
         </div>
