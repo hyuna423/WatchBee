@@ -1,88 +1,186 @@
-
 /*데탑*/
 @media screen and (max-width:1440px) {
+
+  /* intro2 */
+  #intro2 .intro2_area .intro2_icon ul li dl dd br {
+    display: none;
+  }
+
+  #intro2 .intro2_area .intro2_icon ul li {
+    width: 30%;
+  }
 }
 
 
 
 /*노트북*/
-  @media screen and (max-width:1024px) {
-}
+@media screen and (max-width:1024px) {
+  main {
+    width: 100%;
+    height: auto;
+    background: url(../img/bg_main_mo.png)no-repeat top center;
+    background-size: cover;
+  }
 
+  /* home */
+  .nav_wrap .pc_menu {
+    width: 85%;
+  }
 
+  #home .home_wrap .right,
+  #home .home_wrap .left {
+    width: 100%;
+  }
 
-  /*아이패드 (768px)*/
-  @media screen and (max-width:991px) {
-}
+  #home .home_wrap .left .home_txt h2 {
+    font-size: 4rem;
+    text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
 
-
-
-/*모바일*/
-
-@media screen and (max-width:767px) {
-  .debug {
-    opacity: 0.8;
-    display: block;
-    position: absolute;
-    z-index: 1;
-    font-family: sans-serif;
-    transform: rotate(-45deg);
-    transform-origin: 0% 100%;
-    background: #000;
-    color: #fff;
-    width: 150px;
-    height: 100px;
-    line-height: 150px;
+  #home .home_wrap {
+    display: flex;
+    flex-direction: column-reverse;
     text-align: center;
-    user-select: none;
+    justify-content: flex-end;
   }
-    .debug:hover {
-      opacity: 1;
-    }
-    .debug.active {
-      background: #fff;
-      color: #000;
-    }
 
-  .debug.active+.grid path.line--debug {
-    opacity: .2;
+  #home .home_wrap .right img {
+    width: 80%;
+  }
+
+  /* intro */
+  #intro .intro {
+    padding: 0;
+  }
+
+
+  #intro .intro .icon ul li {
+    width: 23%;
+  }
+
+  /* intro3 */
+  #intro3,
+  #nft {
+    padding: 100px 0;
+  }
+
+  #intro3 .intro3_area .intro3_txt {
+    width: 35%;
+  }
+
+  #intro3 .intro3_area .intro3_txt br {
+    display: none;
   }
 }
 
+/*아이패드 (768px)*/
+@media screen and (max-width:991px) {
 
-/* dribbble - twitter */
-.dribbble {
-  position: fixed;
-  display: block;
-  right: 20px;
-  bottom: 20px;
-}
-.dribbble img {
+  .nav_wrap .pc_menu {
+    display: none;
+  }
+
+  /* menu_toggle */
+  .ham {
     display: block;
-    height: 28px;
   }
-.twitter {
-  position: fixed;
-  display: block;
-  right: 64px;
-  bottom: 14px;
-}
-.twitter svg {
-    width: 32px;
-    height: 32px;
-  }
-.twitter svg path {    
-      fill: #1da1f2;
-      stroke: none;
+
+
+
+  /*모바일*/
+
+  @media screen and (max-width:767px) {
+
+    #home .home_wrap .right img {
+      width: 100%;
     }
 
-}
+
+    #intro .intro .icon ul {
+      flex-wrap: wrap;
+    }
+
+    #intro .intro .icon ul li {
+      width: 45%;
+      margin-top: 5%;
+    }
+
+    #intro2 .intro2_area .intro2_icon ul li {
+      width: 45%;
+      margin-top: 5%;
+    }
+
+    i #intro2 .intro2_area .intro2_icon ul li:nth-child(4),
+    #intro2 .intro2_area .intro2_icon ul li:nth-child(5) {
+      padding-top: 0;
+    }
+
+    #intro3 .intro3_area .intro3_con {
+      flex-direction: column;
+    }
+
+    #intro3 .intro3_area .intro3_txt {
+      width: 90%;
+    }
+
+    #intro3 .intro3_area .table {
+      margin-top: 10%;
+      width: 100%;
+    }
+
+    .table td {
+      font-size: 12px;
+    }
+
+    #intro .intro .txt {
+      width: 90%;
+    }
+
+    #intro .intro .txt br {
+      display: none;
+    }
+
+    #intro .intro .icon ul li dl dt,
+    #intro2 .intro2_area .intro2_icon ul li dl dt {
+      font-size: 1rem;
+    }
+
+    #intro .intro .icon ul li dl dd,
+    #intro2 .intro2_area .intro2_icon ul li dl dd {
+      font-size: 12px;
+    }
+
+  }
 
 
-/*모바일2*/
+  /*모바일2*/
 
 
-@media screen and (max-width:576px) {
+  @media screen and (max-width:576px) {
+
+    .moblie ul li a {
+      font-size: 1.3rem;
+    }
+
+    .moblie ul li ul.mob_sub li a {
+      font-size: 1rem;
+    }
+
+
+    #home .home_wrap .left .home_txt h2 {
+      font-size: 3rem;
+    }
+
+    #home .home_wrap .left .button button {
+      background: #FFB000;
+      width: 70%;
+    }
+
+    #home .home_wrap .left .button button:first-child {
+      margin-right: 0;
+      margin-bottom: 5%;
+    }
+  }
 
 }
 
@@ -90,13 +188,38 @@
 
 /*모바일3 갤럭시*/
 
-  @media screen and (max-width:425px) {
+@media screen and (max-width:425px) {
+  main {
+    background: url(../img/bg_main_mo2.png)no-repeat top center;
+  }
 
-}
+  h3 {
+    font-size: 2em;
+  }
+
+  th,
+  td {
+    padding: 16px !important;
+  }
+
+  #home .home_wrap .left .home_txt h2 {
+    font-size: 2rem;
+  }
+
+  #home .home_wrap .left .home_txt h2 span {
+    font-size: 1.2rem;
+  }
+
+  #home .home_wrap .left .button button {
+    padding: 8px;
+  }
+    #intro3 .intro3_area .intro3_txt {
+      width: 100%;
+    }
+
+  }
 
 
 
-/*모바일4 아이폰*/
-    @media screen and (max-width:375px) {
-
-}
+  /*모바일4 아이폰*/
+  @media screen and (max-width:375px) {}

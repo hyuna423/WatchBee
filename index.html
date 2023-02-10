@@ -61,19 +61,19 @@
           <li><a href="#world" class="scroll">WB in the world</a>
             <ul class="sub">
               <li>
-                <a href="">minting</a>
+                <a href="" onclick="return false;">minting</a>
               </li>
               <li>
-                <a href="">Marketplace</a>
+                <a href="" onclick="return false;">Marketplace</a>
               </li>
               <li>
-                <a href="">Lucky Box </a>
+                <a href="" onclick="return false;">Lucky Box </a>
               </li>
               <li>
-                <a href="">Rare Nest</a>
+                <a href="" onclick="return false;">Rare Nest</a>
               </li>
               <li>
-                <a href="">Staking</a>
+                <a href="" onclick="return false;">Staking</a>
               </li>
             </ul>
           </li>
@@ -81,7 +81,7 @@
           <li><a href="#roadmap" class="scroll">Roadmap</a></li>
           <li><a href="#contact" class="scroll">Contact</a></li>
           <li class="lan_site"><i class="xi-globus"></i><i class="xi-caret-down-min"></i>
-            <ul class="sub">
+            <ul class="sub lan">
               <li><a href="index.html">Ko</a></li>
               <li><a href="index_eng.html">Eng</a></li>
             </ul>
@@ -92,66 +92,48 @@
 
       <!--반응형-->
 
-      <div class="menu cross menu--1">
-        <label>
-          <input type="checkbox">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="30" />
-            <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
-            <path class="line--2" d="M0 50h70" />
-            <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
-          </svg>
-        </label>
+      <div class="ham">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
         <script>
-          Array.from(document.getElementsByTagName('path')).map(path => {
-            console.log(path.getTotalLength());
-            const debugPath = path.cloneNode();
-            debugPath.classList.add('line--debug');
-            if (path.parentNode) path.parentNode.insertBefore(debugPath.cloneNode(), path);
-          });
-          const debugCheckbox = document.getElementById('debug');
-          debugCheckbox.addEventListener('change', () => {
-            if (debugCheckbox.checked) {
-              debugCheckbox.parentElement.classList.add('active');
-            } else {
-              debugCheckbox.parentElement.classList.remove('active');
-            }
-          });
-          let currentActive = 0;
-          const checkboxes = document.querySelectorAll('.grid input');
-          const autoShow = setInterval(() => {
-            checkboxes[currentActive % 4].checked = !checkboxes[currentActive % 4].checked;
-            if (!checkboxes[currentActive % 4].checked) currentActive += 1;
-          }, 1000);
-          document.querySelector('.grid').addEventListener('click', () => {
-            clearInterval(autoShow);
-          })
+          var burger = $('.menu-trigger');
 
+          burger.each(function (index) {
+            var $this = $(this);
 
+            $this.on('click', function (e) {
+              e.preventDefault();
+              $(this).toggleClass('active-' + (index + 1));
+            })
+          });
         </script>
-      </div>
 
+      </div>
       <nav class="moblie">
 
         <ul>
 
           <li><a href="#intro" class="scroll">Introduction</a></li>
-          <li><a href="#world" class="scroll">WB in the world</a>
-            <ul>
+          <li class="wb"><a href="#world" class="scroll">WB in the world<i class="xi-caret-down-min"></i></a>
+            <ul class="mob_sub">
               <li>
-                <a href="">minting</a>
+                <a href="" onclick="return false;">minting</a>
               </li>
               <li>
-                <a href="">Marketplace</a>
+                <a href="" onclick="return false;">Marketplace</a>
               </li>
               <li>
-                <a href="">Lucky Box </a>
+                <a href="" onclick="return false;">Lucky Box </a>
               </li>
               <li>
-                <a href="">Rare Nest</a>
+                <a href="" onclick="return false;">Rare Nest</a>
               </li>
               <li>
-                <a href="">Staking</a>
+                <a href="" onclick="return false;">Staking</a>
               </li>
             </ul>
           </li>
@@ -161,12 +143,21 @@
           <li><a href="index.html"><i class="xi-globus"></i></a></li>
         </ul>
 
+        <script>
+          $(document).ready(function () {
+            $(".moblie ul.mob_sub").hide();
+            $(".moblie li.wb").click(function () {
+              $("ul", this).slideToggle("fast");
+            });
+          });
+        </script> 
+
       </nav>
 
       <!--반응형 js-->
       <script type="text/javascript">
         $(function () {
-          $(".tap").click(function () {
+          $(".ham").click(function () {
             $(".moblie").animate({ width: "toggle" }, 250);
           });
         });
@@ -294,7 +285,7 @@
                 <dt>메타버스 연계 </dt>
                 <dd>2024년 1Q에 오픈할 메타버스 서비스와 상품<br>
                   연계가 가능합니다.</dd>
-              </dl>
+              </dl>44
             </li>
           </ul>
         </div>
@@ -303,61 +294,63 @@
 
     <section id="intro3">
       <div class="intro3_area container">
-        <div class="intro3_txt">
-          <h3>Introduction <br>
-            NFT 홀더 혜택</h3>
-          <p>마켓 플레이스 WatchBird in the World 등급별 혜택 <br>
-            홀더 전용 커뮤니티 Rare Nest 이용 럭키 박스 NFT 에어드랍
-            WB 코인 Staking</p>
-        </div>
-        <div class="table">
-          <table>
-            <thead>
-              <tr>
-                <th colspan="2">구분</th>
-                <th>NFT</th>
-                <th>Hotel</th>
-                <th>Golf</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="td_first">
-                <td>개수</td>
-                <td>등급</td>
-                <td>할인율</td>
-                <td>할인율</td>
-                <td>할인율</td>
-              </tr>
-              <tr>
-                <td>1~4</td>
-                <td>Bird</td>
-                <td>5%</td>
-                <td>5%</td>
-                <td>3%</td>
-              </tr>
-              <tr>
-                <td>5~8</td>
-                <td>Hawk Brid</td>
-                <td>10%</td>
-                <td>10%</td>
-                <td>7%</td>
-              </tr>
-              <tr>
-                <td>9~22</td>
-                <td>Owl Bird</td>
-                <td>15%</td>
-                <td>15%</td>
-                <td>11%</td>
-              </tr>
-              <tr>
-                <td>13~16</td>
-                <td>Eagle Bird</td>
-                <td>20%</td>
-                <td>20%</td>
-                <td>15%</td>
-              </tr>
-            </tbody>
-          </table>
+        <h3>Introduction <br>
+          NFT 홀더 혜택</h3>
+        <div class="intro3_con">
+          <div class="intro3_txt">
+            <p>마켓 플레이스 WatchBird in the World 등급별 혜택 <br>
+              홀더 전용 커뮤니티 Rare Nest 이용 럭키 박스 NFT 에어드랍
+              WB 코인 Staking</p>
+          </div>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">구분</th>
+                  <th>NFT</th>
+                  <th>Hotel</th>
+                  <th>Golf</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="td_first">
+                  <td>개수</td>
+                  <td>등급</td>
+                  <td>할인율</td>
+                  <td>할인율</td>
+                  <td>할인율</td>
+                </tr>
+                <tr>
+                  <td>1~4</td>
+                  <td>Bird</td>
+                  <td>5%</td>
+                  <td>5%</td>
+                  <td>3%</td>
+                </tr>
+                <tr>
+                  <td>5~8</td>
+                  <td>Hawk Brid</td>
+                  <td>10%</td>
+                  <td>10%</td>
+                  <td>7%</td>
+                </tr>
+                <tr>
+                  <td>9~22</td>
+                  <td>Owl Bird</td>
+                  <td>15%</td>
+                  <td>15%</td>
+                  <td>11%</td>
+                </tr>
+                <tr>
+                  <td>13~16</td>
+                  <td>Eagle Bird</td>
+                  <td>20%</td>
+                  <td>20%</td>
+                  <td>15%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
