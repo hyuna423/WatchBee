@@ -293,6 +293,16 @@
     margin-bottom: 5%;
   }
 
+  /* intro */
+  #intro .intro .icon {
+    width: 90%;
+  }
+
+  /* intro2 */
+  #intro2 .intro2_area .intro2_icon {
+    width: 90%;
+  }
+
   /* roadmap */
   .rdm_cont_box {
     margin-bottom: 23%;

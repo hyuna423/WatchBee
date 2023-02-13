@@ -554,7 +554,7 @@ header hgroup h1{
 
 #intro .intro .icon {
   padding-top: 80px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -595,7 +595,7 @@ header hgroup h1{
 }
 
 #intro2 .intro2_area .intro2_icon {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
