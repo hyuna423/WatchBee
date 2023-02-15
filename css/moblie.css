@@ -341,6 +341,12 @@
     padding: 8px;
   }
 
+  /*intro*/
+
+  #intro{
+    margin-top: 25%;
+  }
+
   /* intro3 */
 
   #intro3 .intro3_area .intro3_txt {
@@ -364,4 +370,7 @@
 
 
 /*모바일4 아이폰*/
-@media screen and (max-width:375px) {}
+@media screen and (max-width:375px) {
+
+
+}
